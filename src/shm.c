@@ -1,4 +1,4 @@
-#include "shm.h"
+#include "../headers/shm.h"
 #include <stdio.h>
 //compilation: gcc -o shm shm.c -Wall
 

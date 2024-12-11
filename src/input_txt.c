@@ -20,7 +20,9 @@ int count_lines(const char *filename) {
     return lines;
 }
 
-char **read_lines(const char *filename, int *line_count) {
+
+//function to read the lines of the text file into an array of strings
+int read_lines(const char *filename, char **lines, int *line_count) {
     FILE *file = fopen(filename, "r");
     if (!file) {
         perror("Failed to open file");
@@ -28,7 +30,7 @@ char **read_lines(const char *filename, int *line_count) {
     }
 
     *line_count = count_lines(filename);
-    char **lines = malloc(*line_count * sizeof(char *));
+    lines = (char **)malloc(*line_count * sizeof(char *));
     if (!lines) {
         perror("Failed to allocate memory");
         exit(EXIT_FAILURE);
@@ -40,21 +42,11 @@ char **read_lines(const char *filename, int *line_count) {
             perror("Failed to read line");
             exit(EXIT_FAILURE);
         }
-
-        size_t length = strlen(buffer);
-        if (buffer[length - 1] == '\n') {
-            buffer[length - 1] = '\0'; // Remove newline character
-        }
-
         lines[i] = strdup(buffer);
-        if (!lines[i]) {
-            perror("Failed to allocate memory");
-            exit(EXIT_FAILURE);
-        }
     }
-
+    
     fclose(file);
-    return lines;
+    return 0;
 }
 
 //function to free the memory allocated for the array of strings

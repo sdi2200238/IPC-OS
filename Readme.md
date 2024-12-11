@@ -1,11 +1,11 @@
 # Εργασία Ι Λειτουργικών Συστημάτων
-## Author
+## Στοιχεία
 
 - **Oνοματεπώνυμο**: Κορνήλιος Ιωάννου
 - **Email**: sdi2200238@di.uoa.gr
 - **Α.Μ.**: 1115202200238
 
-## Project Information
+## Πληροφορίες Εργασίας
 
 - **Εργασία**: IPC-OS
 - **Description**: Υλοποίηση ενος συστήματος Inter-Process Communication (IPC) με χρήση κοινής μνήμης και semaphores σε γλώσσα C.
@@ -20,7 +20,7 @@
 
 ---
 
-### **Documentation of the Project**
+### **Documentation Εργασίας**
 
 ### **1. Introduction**
 
@@ -177,8 +177,7 @@ void terminate_child(pid_t child_pid, Stats stats);
 
 ### **4. Build and Run**
 
-```markdown
-Για να κατασκευάσετε και να εκτελέσετε το πρόγραμμα έκανα include και ένα Makefile.
+Για να κατασκευάσετε και να εκτελέσετε το πρόγραμμα έκανα include και ένα `Makefile`.
 
 1. **Μεταγλώττιση**: Χρησιμοποιήστε την εντολή `make` για δημιουργήσεται το executable.
   ```sh
@@ -198,5 +197,3 @@ void terminate_child(pid_t child_pid, Stats stats);
   ```sh
   make clean
   ```
-
-```

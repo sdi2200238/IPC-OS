@@ -54,3 +54,13 @@ int sem_up(int sem_id) {
     }
     return 1;
 }
+
+// int main() {
+//     key_t key = ftok("semfile", 65);
+//     int sem_id = sem_create(key);
+//     set_sem(sem_id);
+//     sem_up(sem_id);
+//     sem_down(sem_id);
+//     sem_del(sem_id);
+//     return 0;
+// }

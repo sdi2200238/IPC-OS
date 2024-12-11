@@ -188,7 +188,7 @@ void spawn_child(int sem_id[], int shm_id, pid_t *children, int index) {
         while (1) { // Αναμονή μηνύματος από τον γονέα
             sem_down(sem_id[index]);
             printf("Child [%d] received: %s\n", getpid(), shm_ptr->message);
-            sem_up(sem_id[index]);
+            sem_up(sem_id[index]); // Αποστολή σήματος ότι πήρε το μήνυμα
         }
         // Αποσ΄ύνδεση απο shared memory
         shm_detach(shm_ptr);

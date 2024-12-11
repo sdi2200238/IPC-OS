@@ -1,5 +1,6 @@
 #include "../headers/shm.h"
 #include <stdio.h>
+#include <string.h>
 
 // Δημιουργία shared memory
 int shm_create(key_t key, size_t size) {
@@ -36,3 +37,19 @@ void shm_detach(SharedData* shm_ptr) {
         exit(EXIT_FAILURE);
     }
 }
+
+
+// int main() {
+//     key_t key = ftok("shmfile", 65);
+//     size_t size = sizeof(SharedData);
+//     int shm_id = shm_create(key, size);
+//     SharedData* shm_ptr = shm_attach(shm_id);
+
+//     strcpy(shm_ptr->message, "Hello from shared memory");
+//     printf("Message: %s\n", shm_ptr->message);
+    
+//     shm_detach(shm_ptr);
+//     shm_delete(shm_id);
+
+//     return 0;
+// }

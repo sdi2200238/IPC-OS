@@ -9,7 +9,7 @@
 // Define shared memory structure
 typedef struct data {
     char message[1024]; // Message string
-    time_t timestamp; // Timestamp of the message
+    int child_index;
 } SharedData;
 
 // Functions for shared memory

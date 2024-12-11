@@ -48,19 +48,3 @@ int sem_up(int sem_id) {
     }
     return 1;
 }
-/*
-int main() {
-    key_t key = ftok("semaphores.h", 65);
-    int sem_id = sem_create(key);
-
-    if (set_sem(sem_id)) {
-        printf("Semaphore initialized successfully.\n");
-    }
-
-    printf("Semaphore up: %d\n", sem_up(sem_id));
-    printf("Semaphore down: %d\n", sem_down(sem_id));
-
-    sem_del(sem_id);
-    return 0;
-}
-*/

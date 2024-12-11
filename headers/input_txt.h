@@ -8,7 +8,6 @@
 #include <string.h>
 
 int count_lines(const char *filename);
-int read_lines(const char *filename, char **lines, int *line_count);
 void free_lines(char **lines, int line_count);
 
 #endif

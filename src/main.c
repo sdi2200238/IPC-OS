@@ -155,8 +155,6 @@ while (1) {
         sem_down(sem_id[random_child_index]);
     }
 
-    // Increment the time step
-    //sleep(1); // Simulate time passing
     current_time++;
     
     
@@ -193,8 +191,8 @@ void spawn_child(int sem_id[], int shm_id, pid_t *children, int index) {
         SharedData *shm_ptr = shm_attach(shm_id);
         while (1) {
             sem_down(sem_id[index]); // Wait for the parent to send data
-            //printf("Child [%d] received: %s\n", getpid(), shm_ptr->message);
-            //sleep(1); // Simulate processing delay
+            printf("Child [%d] received: %s\n", getpid(), shm_ptr->message);
+            sleep(1); // Simulate processing delay
             sem_up(sem_id[index]); // Signal the parent that we are ready for the next line
         }
         shm_detach(shm_ptr);
